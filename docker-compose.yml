@@ -8,8 +8,8 @@ services:
     ports:
       - '8080:8080'
     volumes:
-      - /workspaces/kbi:/var/jenkins_home
-      - /workspaces/kbi/jenkins-ansible:/var/jenkins_home/ansible/
+      - /workspaces/jenkins/home/home:/var/jenkins_home
+      - /workspaces/jenkins/jenkins-ansible:/var/jenkins_home/ansible/
       - /var/run/docker.sock:/var/run/docker.sock
     networks:
       - net
@@ -26,7 +26,7 @@ services:
     environment:
       - "MYSQL_ROOT_PASSWORD=123456"
     volumes:
-      - /workspaces/kbi/db:/var/lib/mysql
+      - /workspaces/jenkins/db/db:/var/lib/mysql
     networks:
       - net
   gitlab:
@@ -35,9 +35,9 @@ services:
     ports:
       - '8070:80'
     volumes:
-      - '/workspaces/kbi/githome/config:/etc/gitlab'
-      - '/workspaces/kbi/githome/logs:/var/log/gitlab'
-      - '/workspaces/kbi/githome/data:/var/opt/gitlab'
+      - '/workspaces/jenkins/githome/config:/etc/gitlab'
+      - '/workspaces/jenkins/githome/logs:/var/log/gitlab'
+      - '/workspaces/jenkins/githome/data:/var/opt/gitlab'
     shm_size: '256m'
     networks:
       - net
