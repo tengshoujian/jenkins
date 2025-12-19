@@ -7,4 +7,4 @@ echo "*** build docker image*******"
 echo "*****************************"
 
 cd ./jenkins/build && \
-  docker-compose build  --no-cache
+  docker-compose -f docker-compose.yml  build --no-cache
