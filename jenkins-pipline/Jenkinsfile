@@ -7,7 +7,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh '''
-                    pwd
+                    echo $PWD
                    .jenkins-pipline/jenkins/mvn.sh  mvn -B -DskipTests clean package
                    .jenkins-pipline/jenkins/build/build.sh
                 '''
