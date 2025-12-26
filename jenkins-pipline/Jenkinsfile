@@ -9,21 +9,21 @@ pipeline {
                 sh '''
                     echo $PWD
                    ./jenkins-pipline/jenkins/mvn.sh  mvn -B -DskipTests clean package
-                   .jenkins-pipline/jenkins/build/build.sh
+                   ./jenkins-pipline/jenkins/build/build.sh
                 '''
             }
         }
         stage('Test') {
             steps {
                 sh '''
-                ./jenkins/test/mvn.sh mvn test
+                ./jenkins-pipline/jenkins/test/mvn.sh mvn test
                 '''
             }
         }
         stage('push') {
             steps {
                 sh '''
-                ./jenkins/push+/push.sh
+                ./jenkins-pipline/jenkins/push+/push.sh
                 '''
             }
         }
