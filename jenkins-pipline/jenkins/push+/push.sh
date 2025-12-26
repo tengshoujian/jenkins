@@ -9,9 +9,9 @@ echo "*****login*********"
 docker login -u tengshoujian -p $PASS
 echo "******tag iamge****"
 
-docker tag $IMAGE:$BUILD_TAG tengshoujian/$IMAGE:$BUILD_TAG
+docker tag $IMAGE:$TAG tengshoujian/$IMAGE:$TAG
 
 echo "************push image*******"
 
-docker push tengshoujian/$IMAGE:$BUILD_TAG
+docker push tengshoujian/$IMAGE:$TAG
 
