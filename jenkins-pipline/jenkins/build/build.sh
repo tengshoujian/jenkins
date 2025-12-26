@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cp ./java-app/target/*.jar ./jenkins/build
+cp ./jenkins-piplinejava-app/target/*.jar ./jenkins/build
 
 echo "*****************************"
 echo "*** build docker image*******"
