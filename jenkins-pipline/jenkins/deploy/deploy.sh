@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "*******************"
+
 echo maven-project > /tmp/.auth
 echo $TAG >> /tmp/.auth
 echo $PASS >> /tmp/.auth
