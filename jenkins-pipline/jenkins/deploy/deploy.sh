@@ -4,6 +4,6 @@ echo maven-project > /tmp/.auth
 echo $TAG >> /tmp/.auth
 echo $PASS >> /tmp/.auth
 
-scp -i /opt/prod /tmp/.auth prod-user@:/tmp/.auth
-scp -i /opt/prod ./jenkins/deploy/publish prod-user@:/tmp/publish
-ssh -i /opt/prod prod-user@ "/tmp/publish"
+scp -i /opt/prod /tmp/.auth prod-user@118.178.140.203:/tmp/.auth
+scp -i /opt/prod ./jenkins/deploy/publish prod-user@118.178.140.203:/tmp/publish
+ssh -i /opt/prod prod-user@118.178.140.203 "/tmp/publish"
