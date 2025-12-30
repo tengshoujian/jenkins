@@ -14,7 +14,7 @@ pipeline {
                 '''
             }
             post {
-                always {
+                success {
                 archiveArtifacts artifacts: './jenkins-pipline/java-app/target/*.jar', fingerprint: true
 
             }
@@ -26,6 +26,11 @@ pipeline {
                 ./jenkins-pipline/jenkins/mvn.sh mvn test
                 '''
             }
+        post {
+        always {
+            junit './jenkins-pipline/java-app/target/surefire-reports/*.xml'
+        }
+    }
         }
         stage('push') {
             steps {
