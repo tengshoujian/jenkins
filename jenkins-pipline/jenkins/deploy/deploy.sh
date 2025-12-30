@@ -7,5 +7,6 @@ echo $PASS >> /tmp/.auth
 
 scp -i /opt/prod /tmp/.auth prod-user@118.178.140.203:/tmp/.auth
 scp -i /opt/prod ./jenkins-pipline/jenkins/deploy/publish prod-user@118.178.140.203:/tmp/publish
+scp -i /opt/prod ./jenkins-pipline/jenkins/deploy/docker-compose prod-user@118.178.140.203:~/maven
 ssh -i /opt/prod prod-user@118.178.140.203 "bash /tmp/publish"
 
